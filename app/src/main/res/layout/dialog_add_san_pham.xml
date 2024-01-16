@@ -78,6 +78,7 @@
                     android:padding="15dp"
                     android:background="@drawable/style_ed_dialog_loaisp"
                     android:fontFamily="serif"
+                    android:inputType="numberDecimal"
                     />
 
             </LinearLayout>

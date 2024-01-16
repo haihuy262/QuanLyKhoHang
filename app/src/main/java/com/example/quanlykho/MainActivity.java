@@ -18,15 +18,9 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.example.quanlykho.fragment.DanhSach_Sp;
 import com.example.quanlykho.fragment.Loai_Sp;
+import com.example.quanlykho.fragment.QuanLyThanhVien;
 import com.google.android.material.navigation.NavigationView;
 
-//import khanhnqph30151.fptpoly.project_lv1.fragment.DanhSach_Sp;
-//import khanhnqph30151.fptpoly.project_lv1.fragment.DoiMK;
-//import khanhnqph30151.fptpoly.project_lv1.fragment.Loai_Sp;
-//import khanhnqph30151.fptpoly.project_lv1.fragment.PhieuNhap;
-//import khanhnqph30151.fptpoly.project_lv1.fragment.PhieuXuat;
-//import khanhnqph30151.fptpoly.project_lv1.fragment.QuanLyThanhVien;
-//import khanhnqph30151.fptpoly.project_lv1.fragment.ThongKe;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
     private DrawerLayout drawerLayout;
@@ -105,11 +99,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //            drawerLayout.close();
 //            replaceFragment(PhieuNhap.newInstance());
 //            return true;
-//        }else if (item.getItemId() == R.id.QuanlyTv) {
-//            drawerLayout.close();
-//            replaceFragment(QuanLyThanhVien.newInstance());
-//            return true;
-//        }  else if (item.getItemId() == R.id.ThongKe) {
+//        }
+        else if (item.getItemId() == R.id.QuanlyTv) {
+            drawerLayout.close();
+            replaceFragment(QuanLyThanhVien.newInstance());
+            return true;
+        }
+//        else if (item.getItemId() == R.id.ThongKe) {
 //            drawerLayout.close();
 //            replaceFragment(ThongKe.newInstance());
 //            return true;

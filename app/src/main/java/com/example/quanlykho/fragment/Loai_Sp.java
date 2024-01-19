@@ -127,7 +127,7 @@ public class Loai_Sp extends Fragment {
                     public void onClick(View v) {
                         String ten = ed1.getText().toString();
                         if (ten.trim().equals("")) {
-                            Toast.makeText(getContext(), "ko dc de trong", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getContext(), "Không được để trống", Toast.LENGTH_SHORT).show();
                         }
                         else if (ten.length()<5) {
                             Toast.makeText(getContext(), "tối thiểu 5 ký tự", Toast.LENGTH_SHORT).show();

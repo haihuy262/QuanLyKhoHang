@@ -40,6 +40,7 @@ public class SanPhamAdapter extends RecyclerView.Adapter<SanPhamAdapter.ViewHold
 
     private SanPhamDAO dao;
 
+
     public SanPhamAdapter(ArrayList<SanPham> list, Context context, SanPhamDAO dao) {
         this.list = list;
         this.context = context;
@@ -63,6 +64,7 @@ public class SanPhamAdapter extends RecyclerView.Adapter<SanPhamAdapter.ViewHold
         holder.tv_ten.setText(list.get(position).getTen_sp());
         holder.tv_giaTien.setText(String.valueOf(list.get(position).getGia_sp()));
 
+
         holder.tv_loaiSanPham.setText(String.valueOf(list.get(position).getLoai_Sp()));
         holder.sua.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,7 +75,7 @@ public class SanPhamAdapter extends RecyclerView.Adapter<SanPhamAdapter.ViewHold
         holder.xoa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showDele(list.get(position).getId_sp());
+                showDele(list.get(position).getId_sp(), list.get(position).getTen_sp());
             }
         });
     }
@@ -84,6 +86,7 @@ public class SanPhamAdapter extends RecyclerView.Adapter<SanPhamAdapter.ViewHold
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
+
         AppCompatButton sua,xoa;
         TextView tv_ten, tv_giaTien, tv_soLuong, tv_ngayNhap, tv_loaiSanPham;
         public ViewHolder(@NonNull View itemView) {
@@ -95,16 +98,16 @@ public class SanPhamAdapter extends RecyclerView.Adapter<SanPhamAdapter.ViewHold
             xoa=itemView.findViewById(R.id.ivDeleteLoaiSp);
         }
     }
-    public void showDele(int id){
+    public void showDele(int id,String tensp){
         AlertDialog.Builder dialogDL = new AlertDialog.Builder(context);
-        dialogDL.setMessage("Bạn có muốn xóa không?");
+        dialogDL.setMessage("Bạn có muốn xóa sản phẩm: \"" + tensp + "\" không?");
         dialogDL.setNegativeButton("Không", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();
             }
         });
-        dialogDL.setPositiveButton("CÓ", new DialogInterface.OnClickListener() {
+        dialogDL.setPositiveButton("Có", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dao = new SanPhamDAO(context);

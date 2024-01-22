@@ -18,6 +18,8 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.example.quanlykho.fragment.DanhSach_Sp;
 import com.example.quanlykho.fragment.Loai_Sp;
+import com.example.quanlykho.fragment.PhieuNhap;
+import com.example.quanlykho.fragment.PhieuXuat;
 import com.example.quanlykho.fragment.QuanLyThanhVien;
 import com.google.android.material.navigation.NavigationView;
 
@@ -91,15 +93,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             replaceFragment(Loai_Sp.newInstance());
             return true;
         }
-//        else if (item.getItemId() == R.id.phieuXuatKho) {
-//            drawerLayout.close();
-//            replaceFragment(PhieuXuat.newInstance());
-//            return true;
-//        } else if (item.getItemId() == R.id.phieuNhapKho) {
-//            drawerLayout.close();
-//            replaceFragment(PhieuNhap.newInstance());
-//            return true;
-//        }
+        else if (item.getItemId() == R.id.phieuXuatKho) {
+            drawerLayout.close();
+            replaceFragment(PhieuXuat.newInstance());
+            return true;
+        } else if (item.getItemId() == R.id.phieuNhapKho) {
+            drawerLayout.close();
+            replaceFragment(PhieuNhap.newInstance());
+            return true;
+        }
         else if (item.getItemId() == R.id.QuanlyTv) {
             drawerLayout.close();
             replaceFragment(QuanLyThanhVien.newInstance());

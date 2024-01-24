@@ -63,7 +63,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Tên sp "
+                    android:text="Tên sản phẩm"
                     android:textSize="18dp"
                     android:fontFamily="serif"
                     android:textStyle="bold"

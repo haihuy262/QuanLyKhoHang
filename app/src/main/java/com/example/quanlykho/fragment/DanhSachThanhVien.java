@@ -1,5 +1,9 @@
 package com.example.quanlykho.fragment;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -61,5 +65,28 @@ public class DanhSachThanhVien extends Fragment {
         reThanhVien.setAdapter(adapter);
 
         super.onViewCreated(view, savedInstanceState);
+
+        // Đăng ký BroadcastReceiver để lắng nghe sự kiện thông báo
+        BroadcastReceiver receiver = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                // Làm mới danh sách thành viên
+                refreshMemberList();
+            }
+        };
+
+        IntentFilter filter = new IntentFilter("ACTION_UPDATE_MEMBER_LIST");
+        getContext().registerReceiver(receiver, filter);
+
+        super.onViewCreated(view, savedInstanceState);
     }
+
+    private void refreshMemberList() {
+        // Làm mới danh sách thành viên ở đây (gọi lại đoạn mã để load danh sách mới)
+        ThanhVienDAO dao = new ThanhVienDAO(getContext());
+        list = dao.getAllData();
+        adapter.setData(list);
+        adapter.notifyDataSetChanged();
+    }
+
 }

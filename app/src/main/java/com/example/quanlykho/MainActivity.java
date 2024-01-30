@@ -21,6 +21,7 @@ import com.example.quanlykho.fragment.Loai_Sp;
 import com.example.quanlykho.fragment.PhieuNhap;
 import com.example.quanlykho.fragment.PhieuXuat;
 import com.example.quanlykho.fragment.QuanLyThanhVien;
+import com.example.quanlykho.fragment.ThongKe;
 import com.google.android.material.navigation.NavigationView;
 
 
@@ -107,11 +108,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             replaceFragment(QuanLyThanhVien.newInstance());
             return true;
         }
-//        else if (item.getItemId() == R.id.ThongKe) {
-//            drawerLayout.close();
-//            replaceFragment(ThongKe.newInstance());
-//            return true;
-//        } else if (item.getItemId() == R.id.doiMatKhau) {
+        else if (item.getItemId() == R.id.ThongKe) {
+            drawerLayout.close();
+            replaceFragment(ThongKe.newInstance());
+            return true;
+        }
+//        else if (item.getItemId() == R.id.doiMatKhau) {
 //            drawerLayout.close();
 //            replaceFragment(DoiMK.newInstance());
 //            return true;

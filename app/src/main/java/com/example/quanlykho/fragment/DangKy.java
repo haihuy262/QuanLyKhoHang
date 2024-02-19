@@ -1,5 +1,8 @@
 package com.example.quanlykho.fragment;
 
+
+import android.content.Intent;
+
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +18,7 @@ import androidx.fragment.app.Fragment;
 import com.example.quanlykho.R;
 import com.example.quanlykho.data.ThanhVienDAO;
 import com.example.quanlykho.model.ThanhVien;
+
 
 
 public class DangKy extends Fragment {
@@ -67,6 +71,15 @@ public class DangKy extends Fragment {
 //                        Intent i=new Intent(RegisterActivity.this, LoginActivity.class);
 //                        finish();
 //                        startActivity(i);
+
+                        // Gửi broadcast thông báo sự thay đổi
+                        Intent broadcastIntent = new Intent("ACTION_UPDATE_MEMBER_LIST");
+                        getActivity().sendBroadcast(broadcastIntent);
+                        // Reset các EditText về giá trị rỗng
+                        edUsername_regis.setText("");
+                        edUserpass_regis.setText("");
+                        edUserRePass.setText("");
+
                     }else {
                         Toast.makeText(getActivity(), "them that bai", Toast.LENGTH_SHORT).show();
                     }

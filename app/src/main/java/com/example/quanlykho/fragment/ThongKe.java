@@ -24,6 +24,11 @@ import com.example.quanlykho.data.ThongKeDAO;
 import com.example.quanlykho.model.NhapKho;
 import com.example.quanlykho.model.XuatKho;
 
+import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.data.PieData;
+import com.github.mikephil.charting.data.PieDataSet;
+import com.github.mikephil.charting.data.PieEntry;
+
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -73,7 +78,9 @@ public class ThongKe extends Fragment {
         dao = new ThongKeDAO(getContext());
         RecyclerView rc = view.findViewById(R.id.recy_statis);
         adapter = new TKXuatAdapter(list_xuat, list_ton, getContext());
-//        PieChart pieChart = view.findViewById(R.id.pieChart);
+
+        PieChart pieChart = view.findViewById(R.id.pieChart);
+
         btn_tuNgay = view.findViewById(R.id.btn_tuNgay);
         btn_denNgay = view.findViewById(R.id.btn_denNgay);
         btn_thongKe = view.findViewById(R.id.btn_thongKe);
@@ -102,10 +109,12 @@ public class ThongKe extends Fragment {
                 recy.setAdapter(adapter);
                 if (list_ton.size() == 0 && list_xuat.size() == 0) {
                     tv_null.setVisibility(View.VISIBLE);
-//                    pieChart.setVisibility(View.INVISIBLE);
+
+                    pieChart.setVisibility(View.INVISIBLE);
                 } else {
                     tv_null.setVisibility(View.INVISIBLE);
-//                    pieChart.setVisibility(View.VISIBLE);
+                    pieChart.setVisibility(View.VISIBLE);
+
                     int xuat = 0;
                     for (XuatKho xuatKho : list_xuat) {
                         xuat += xuatKho.getXuatKho();
@@ -116,19 +125,21 @@ public class ThongKe extends Fragment {
                     }
 
 
-//                    ArrayList<PieEntry> entries = new ArrayList<>();
-//                    entries.add(new PieEntry(xuat, "Xuất"));
-//                    entries.add(new PieEntry(nhap - xuat, "Tồn"));
-//
-//                    PieDataSet dataSet = new PieDataSet(entries, " ");
-//                    ArrayList<Integer> colors = new ArrayList<>();
-//                    colors.add(getResources().getColor(R.color.blue)); // Màu sắc cho thu nhập
-//                    colors.add(getResources().getColor(R.color.red));
-//                    dataSet.setColors(colors);
-//                    dataSet.setValueTextSize(20);
-//                    PieData data = new PieData(dataSet);
-//                    pieChart.setData(data);
-//                    pieChart.animateY(1000);
+
+                    ArrayList<PieEntry> entries = new ArrayList<>();
+                    entries.add(new PieEntry(xuat, "Xuất"));
+                    entries.add(new PieEntry(nhap - xuat, "Tồn"));
+
+                    PieDataSet dataSet = new PieDataSet(entries, " ");
+                    ArrayList<Integer> colors = new ArrayList<>();
+                    colors.add(getResources().getColor(R.color.blue)); // Màu sắc cho thu nhập
+                    colors.add(getResources().getColor(R.color.red));
+                    dataSet.setColors(colors);
+                    dataSet.setValueTextSize(20);
+                    PieData data = new PieData(dataSet);
+                    pieChart.setData(data);
+                    pieChart.animateY(1000);
+
                 }
 
             }
@@ -207,7 +218,9 @@ public class ThongKe extends Fragment {
                     recy.setAdapter(adapter);
                     if (list_ton.size() == 0 && list_xuat.size() == 0) {
                         tv_null.setVisibility(View.VISIBLE);
-//                        pieChart.setVisibility(View.INVISIBLE);
+
+                        pieChart.setVisibility(View.INVISIBLE);
+
                     } else {
                         tv_null.setVisibility(View.INVISIBLE);
                         int xuat = 0;
@@ -219,20 +232,22 @@ public class ThongKe extends Fragment {
                             nhap += nhapKho.getTonKho();
                         }
 
-//                        pieChart.setVisibility(View.VISIBLE);
-//                        ArrayList<PieEntry> entries = new ArrayList<>();
-//                        entries.add(new PieEntry(xuat, "Xuất"));
-//                        entries.add(new PieEntry(nhap - xuat, "Tồn"));
-//
-//                        PieDataSet dataSet = new PieDataSet(entries, " ");
-//                        ArrayList<Integer> colors = new ArrayList<>();
-//                        colors.add(getResources().getColor(R.color.blue)); // Màu sắc cho thu nhập
-//                        colors.add(getResources().getColor(R.color.red));
-//                        dataSet.setColors(colors);
-//                        dataSet.setValueTextSize(20);
-//                        PieData data = new PieData(dataSet);
-//                        pieChart.setData(data);
-//                        pieChart.animateY(1000);
+
+                        pieChart.setVisibility(View.VISIBLE);
+                        ArrayList<PieEntry> entries = new ArrayList<>();
+                        entries.add(new PieEntry(xuat, "Xuất"));
+                        entries.add(new PieEntry(nhap - xuat, "Tồn"));
+
+                        PieDataSet dataSet = new PieDataSet(entries, " ");
+                        ArrayList<Integer> colors = new ArrayList<>();
+                        colors.add(getResources().getColor(R.color.blue)); // Màu sắc cho thu nhập
+                        colors.add(getResources().getColor(R.color.red));
+                        dataSet.setColors(colors);
+                        dataSet.setValueTextSize(20);
+                        PieData data = new PieData(dataSet);
+                        pieChart.setData(data);
+                        pieChart.animateY(1000);
+
                     }
                 }
 

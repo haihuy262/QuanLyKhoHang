@@ -30,6 +30,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.quanlykho.R;
 import com.example.quanlykho.adapter.PhieuXuatAdapter;
 import com.example.quanlykho.data.PhieuNkDAO;
+
+import com.example.quanlykho.data.PhieuXkDAO;
+
 import com.example.quanlykho.data.SanPhamDAO;
 import com.example.quanlykho.model.PhieuXuatKho;
 import com.example.quanlykho.model.SanPham;
@@ -38,6 +41,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+
 
 
 public class PhieuXuat extends Fragment {

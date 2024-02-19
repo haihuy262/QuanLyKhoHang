@@ -30,7 +30,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.quanlykho.R;
 import com.example.quanlykho.adapter.PhieuNhapAdapter;
 import com.example.quanlykho.data.PhieuNkDAO;
+
 import com.example.quanlykho.data.PhieuXkDAO;
+
 import com.example.quanlykho.data.SanPhamDAO;
 import com.example.quanlykho.model.PhieuNhapKho;
 import com.example.quanlykho.model.SanPham;

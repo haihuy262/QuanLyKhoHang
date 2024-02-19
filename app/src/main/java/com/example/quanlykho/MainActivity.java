@@ -17,6 +17,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.quanlykho.fragment.DanhSach_Sp;
+import com.example.quanlykho.fragment.DoiMK;
 import com.example.quanlykho.fragment.Loai_Sp;
 import com.example.quanlykho.fragment.PhieuNhap;
 import com.example.quanlykho.fragment.PhieuXuat;
@@ -98,7 +99,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             drawerLayout.close();
             replaceFragment(PhieuXuat.newInstance());
             return true;
-        } else if (item.getItemId() == R.id.phieuNhapKho) {
+
+        }
+        else if (item.getItemId() == R.id.phieuNhapKho) {
+
             drawerLayout.close();
             replaceFragment(PhieuNhap.newInstance());
             return true;
@@ -107,17 +111,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             drawerLayout.close();
             replaceFragment(QuanLyThanhVien.newInstance());
             return true;
-        }
-        else if (item.getItemId() == R.id.ThongKe) {
+
+        }  else if (item.getItemId() == R.id.ThongKe) {
             drawerLayout.close();
             replaceFragment(ThongKe.newInstance());
             return true;
+        } else if (item.getItemId() == R.id.doiMatKhau) {
+            drawerLayout.close();
+            replaceFragment(DoiMK.newInstance());
+            return true;
         }
-//        else if (item.getItemId() == R.id.doiMatKhau) {
-//            drawerLayout.close();
-//            replaceFragment(DoiMK.newInstance());
-//            return true;
-//        }
+
         else if (item.getItemId() == R.id.dangxuat) {
             Intent i = new Intent(MainActivity.this, LoginActivity.class);
             startActivity(i);

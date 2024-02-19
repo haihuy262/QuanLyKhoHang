@@ -23,7 +23,7 @@ public class ThongKeDAO {
 
     }
 
-    @SuppressLint("Range")
+
     public ArrayList<XuatKho> XuatKhoByMonth(String thang) {
         String query = "SELECT Sp_id, SUM(phieuXk_soLuong) AS totalExport FROM tbl_phieuXk " +
                 "WHERE substr(phieuXk_ngayXuat,6,2) = ? " +
@@ -65,8 +65,9 @@ public class ThongKeDAO {
         }
         return list;
     }
-    @SuppressLint("Range")
-    public ArrayList<XuatKho> XuatKhoByDate(String tuNgay, String denNgay) {
+
+    public ArrayList<XuatKho> XuatKhoByDate( String tuNgay,String denNgay) {
+
         String query = "SELECT Sp_id, SUM(phieuXk_soLuong) AS totalExport FROM tbl_phieuXk " +
                 "WHERE phieuXk_ngayXuat BETWEEN ? AND ? " +
                 "GROUP BY Sp_id";

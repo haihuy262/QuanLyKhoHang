@@ -26,14 +26,17 @@ import androidx.appcompat.widget.AppCompatButton;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.quanlykho.R;
-import com.example.quanlykho.data.PhieuXkDAO;
+
 import com.example.quanlykho.data.SanPhamDAO;
+import com.example.quanlykho.fragment.PhieuXkDAO;
+
 import com.example.quanlykho.model.PhieuXuatKho;
 import com.example.quanlykho.model.SanPham;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+
 
 
 public class PhieuXuatAdapter extends RecyclerView.Adapter<PhieuXuatAdapter.ViewHolder> {
@@ -74,8 +77,8 @@ public class PhieuXuatAdapter extends RecyclerView.Adapter<PhieuXuatAdapter.View
         holder.tvNgayXuat.setText(list.get(position).getNgayXuat());
 
 
+        //Sựa kiện xóa
 
-//Sựa kiện xóa
         holder.ivXoa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

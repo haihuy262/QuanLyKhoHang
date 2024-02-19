@@ -11,6 +11,7 @@ import com.example.quanlykho.model.PhieuNhapKho;
 import java.util.ArrayList;
 
 
+
 public class PhieuNkDAO {
     private final SQLiteDatabase sqLiteDatabase;
     private Context context;

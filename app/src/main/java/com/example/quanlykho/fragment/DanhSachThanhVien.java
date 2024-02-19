@@ -1,9 +1,11 @@
 package com.example.quanlykho.fragment;
 
+
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -66,6 +68,7 @@ public class DanhSachThanhVien extends Fragment {
 
         super.onViewCreated(view, savedInstanceState);
 
+
         // Đăng ký BroadcastReceiver để lắng nghe sự kiện thông báo
         BroadcastReceiver receiver = new BroadcastReceiver() {
             @Override
@@ -89,4 +92,6 @@ public class DanhSachThanhVien extends Fragment {
         adapter.notifyDataSetChanged();
     }
 
+=======
+ 
 }

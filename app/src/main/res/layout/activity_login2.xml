@@ -66,15 +66,7 @@
             android:fontFamily="serif"
             android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Quên mật khẩu"
-        android:gravity="right"
-        android:paddingRight="10dp"
-        android:fontFamily="serif"
 
-        />
 
 
     <androidx.appcompat.widget.AppCompatButton
